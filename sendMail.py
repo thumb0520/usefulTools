@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Jul 19 11:41:35 2019
+Created on Tue Jan 26 21:10:45 2021
 
-@author: dxm
+@author: sy
 """
 
 import smtplib
@@ -29,5 +29,3 @@ def sendMail(receivers,messg):
     
 if __name__=="__main__":
     sendMail('receiver@email.com','msg balabala')
-    
-    
