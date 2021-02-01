@@ -115,37 +115,36 @@ class MouseActionExecute(threading.Thread):
 
 
 def button_onClick(action):
-    pass
-#    m1 = MouseActionListener(file_name='mouse.action')
-#    m2 = MouseActionExecute(file_name='mouse.action')
+    m1 = MouseActionListener(file_name='mouse.action')
+    m2 = MouseActionExecute(file_name='mouse.action')
 
-#    if action == 'listener':
-#        if startListenerBtn['text'] == '录制':
-#            m1.start()
-#            startListenerBtn['text'] = '录制中...关闭程序停止录制'
-#            startListenerBtn['state'] = 'disabled'
-#
-#    elif action == 'execute':
-#        if startExecuteBtn['text'] == '回放':
-#            m2.start()
-#            startExecuteBtn['text'] = '回放中...关闭程序停止回放'
-#            startExecuteBtn['state'] = 'disabled'
+    if action == 'listener':
+        if startListenerBtn['text'] == '录制':
+            m1.start()
+            startListenerBtn['text'] = '录制中...关闭程序停止录制'
+            startListenerBtn['state'] = 'disabled'
+
+    elif action == 'execute':
+        if startExecuteBtn['text'] == '回放':
+            m2.start()
+            startExecuteBtn['text'] = '回放中...关闭程序停止回放'
+            startExecuteBtn['state'] = 'disabled'
 
 def main():
     mMouseActionListener = MouseActionListener(file_name='mouse.action')
     mMouseActionListener.start()
-    
+
+def main1():
+    root = tkinter.Tk()
+    root.title('鼠标精灵-蓝士钦')
+    root.geometry('200x200+400+100')
+
+    startListenerBtn = tkinter.Button(root, text="录制", command=lambda: button_onClick('listener'))
+    startListenerBtn.place(x=10, y=10, width=180, height=80)
+
+    startExecuteBtn = tkinter.Button(root, text="回放", command=lambda: button_onClick('execute'))
+    startExecuteBtn.place(x=10, y=110, width=180, height=80)
+    root.mainloop()
 
 if __name__ == '__main__':
-
-#    root = tkinter.Tk()
-#    root.title('鼠标精灵-蓝士钦')
-#    root.geometry('200x200+400+100')
-#
-#    startListenerBtn = tkinter.Button(root, text="录制", command=lambda: button_onClick('listener'))
-#    startListenerBtn.place(x=10, y=10, width=180, height=80)
-#
-#    startExecuteBtn = tkinter.Button(root, text="回放", command=lambda: button_onClick('execute'))
-#    startExecuteBtn.place(x=10, y=110, width=180, height=80)
-#    root.mainloop()
     main()
