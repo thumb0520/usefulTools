@@ -53,6 +53,7 @@ def on_scroll(x, y, dx, dy):
 
 def main1():
     # Collect events until released
+    print("hello world")
     while True:
         with pynput.mouse.Listener(
                 on_click=on_click) as listener:
